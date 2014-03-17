@@ -27,7 +27,7 @@ fi
 
 echo "vpn pptpd ${pass} *" >> /etc/ppp/chap-secrets
 
-iptables -t nat -A POSTROUTING -s 172.16.36.0/24 -j SNAT --to-source 116.251.217.106 `
+iptables -t nat -A POSTROUTING -s 172.16.36.0/24 -j SNAT --to-source 116.251.217.106 
 iptables -A FORWARD -p tcp --syn -s 172.16.36.0/24 -j TCPMSS --set-mss 1356
 service iptables save
 
